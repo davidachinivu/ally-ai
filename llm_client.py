@@ -27,7 +27,7 @@ class LLMClient:
         if self.provider == "offline":
             print("No valid API keys found. Defaulting to OFFLINE/MOCK mode.")
 
-    def generate(self, system_prompt, user_message, max_tokens=1000, temperature=0.7):
+    def generate(self, system_prompt, user_message, max_tokens=500, temperature=0.7):
         """
         Unified generation method (Gemini Only).
         """
