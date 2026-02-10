@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Environment Variables (IMPORTANT: Do not commit secrets!)
+# Environment Variables
 .env
 
 # Virtual Environment
