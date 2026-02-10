@@ -27,19 +27,42 @@ class LLMClient:
         if self.provider == "offline":
             print("No valid API keys found. Defaulting to OFFLINE/MOCK mode.")
 
-    def generate(self, system_prompt, user_message, max_tokens=500, temperature=0.7):
+    def generate(self, system_prompt, user_message, max_tokens=1000, temperature=0.7):
         """
         Unified generation method (Gemini Only).
         """
         if self.provider == "gemini":
             try:
+                # Gemini doesn't support system prompts in the same way, so we prepend it
                 full_prompt = f"{system_prompt}\n\nUser Message: {user_message}"
+                
+                # Configure safety settings to allow supportive discussions of sensitive topics
+                safety_settings = [
+                    {
+                        "category": "HARM_CATEGORY_HARASSMENT",
+                        "threshold": "BLOCK_ONLY_HIGH"
+                    },
+                    {
+                        "category": "HARM_CATEGORY_HATE_SPEECH",
+                        "threshold": "BLOCK_ONLY_HIGH"
+                    },
+                    {
+                        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                        "threshold": "BLOCK_ONLY_HIGH"
+                    },
+                    {
+                        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+                        "threshold": "BLOCK_ONLY_HIGH"
+                    },
+                ]
+
                 response = self.model.generate_content(
                     full_prompt,
                     generation_config=genai.types.GenerationConfig(
                         temperature=temperature,
                         max_output_tokens=max_tokens
-                    )
+                    ),
+                    safety_settings=safety_settings
                 )
                 return response.text
             except Exception as e:
@@ -55,7 +78,7 @@ class LLMClient:
 
     def _mock_response(self, message, is_fallback=False):
         msg = message.lower()
-        prefix = "(⚠️ Quota/Rate Limit Exceeded - Offline Mode) " if is_fallback else ""
+        prefix = "(Quota/Rate Limit Exceeded - Offline Mode) " if is_fallback else ""
         
         if any(word in msg for word in ["bully", "mean", "tease", "harass", "hurt"]):
             return prefix + "I'm sorry to hear that you're being treated this way. It's not your fault. Remember that you don't have to face this alone—consider talking to a trusted adult or teacher."
