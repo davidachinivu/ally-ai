@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment Variables (IMPORTANT: Do not commit secrets!)
+.env
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# IDE Settings
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/
+
+# OS specific
+.DS_Store
+Thumbs.db
