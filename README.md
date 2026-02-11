@@ -100,8 +100,6 @@ Setup and Usage
 Installation
 
 Clone the repository and install dependencies.
-
-git clone https://github.com/yourusername/ally-ai.git
 pip install -r requirements.txt
 
 Configuration
@@ -152,7 +150,7 @@ Intelligent resource recommendations
 Suggest location-specific counselors and support groups using geolocation.
 
 Model fine-tuning
-Train a smaller open-source model such as Llama 3 on therapeutic dialogue to improve privacy and reduce external API reliance.
+Train a smaller open-source model, such as Llama 3, on therapeutic dialogue to improve privacy and reduce external API reliance.
 
 Ethical Considerations
 
