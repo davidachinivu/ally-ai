@@ -1,5 +1,7 @@
 # 🛡️ AllyAI: Multi-Agent Anti-Bullying Support System
 
+**Live Demo:** [https://ally-ai-chat.streamlit.app/](https://ally-ai-chat.streamlit.app/)
+
 **AllyAI** is a real-time, empathetic AI companion designed to detect bullying, harassment, and emotional distress in user conversations. Unlike traditional text-in, text-out chatbots, AllyAI uses a **multi-agent architecture** that separates emotional analysis from response generation, enabling safer, more nuanced, and analytically rich interactions.
 
 ---
