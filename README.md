@@ -1,4 +1,4 @@
-# 🛡️ AllyAI: Multi-Agent Anti-Bullying Support System
+# AllyAI: Multi-Agent Anti-Bullying Support System
 
 **Live Demo:** [https://ally-ai-chat.streamlit.app/](https://ally-ai-chat.streamlit.app/)
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 The purpose of AllyAI is to move beyond basic chatbot behavior and build a system that understands emotional context and risk in real time.
 
@@ -17,11 +17,11 @@ The purpose of AllyAI is to move beyond basic chatbot behavior and build a syste
 
 ---
 
-## 🏗️ System Architecture (Multi-Agent Design)
+## System Architecture (Multi-Agent Design)
 
 AllyAI uses a modular agent-based architecture. The main application (`app.py`) acts as an **orchestrator**, coordinating three specialized agents:
 
-### 1. 🕵️ Detection Agent (`agents/detection_agent.py`)
+### 1. Detection Agent (`agents/detection_agent.py`)
 - **Role:** The system’s observer. It never speaks directly to the user.
 - **Function:** Analyzes every user message before a response is generated.
 - **Outputs:**
@@ -30,7 +30,7 @@ AllyAI uses a modular agent-based architecture. The main application (`app.py`) 
   - **Emotions:** Sadness, Fear, Hope, Anger, etc.
   - **Topics:** School, Appearance, Social Pressure, Identity, etc.
 
-### 2. 🗣️ Response Agent (`agents/response_agent.py`)
+### 2. Response Agent (`agents/response_agent.py`)
 - **Role:** The system’s voice.
 - **Function:** Uses the Detection Agent’s analysis to generate an appropriate response persona.
 - **Decision Logic:**
@@ -38,14 +38,14 @@ AllyAI uses a modular agent-based architecture. The main application (`app.py`) 
   - *High risk or bullying detected:* Protective persona that validates feelings and encourages reaching out to trusted adults.
   - *Crisis detected (Hard Override):* AI generation is stopped, and a predefined safety response with human hotline resources is returned immediately.
 
-### 3. 📊 Analytics Agent (`agents/analytics_agent.py`)
+### 3. Analytics Agent (`agents/analytics_agent.py`)
 - **Role:** The system’s recorder.
 - **Function:** Aggregates emotional and risk metadata without storing private conversation content.
 - **Output:** Powers the real-time **Empathy Dashboard** in the UI, displaying trends across the session.
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Frontend:** Streamlit (Python-based interactive UI)
 - **AI Core:** Google Gemini (`gemini-flash-latest`) via `google-generativeai`
@@ -55,7 +55,7 @@ AllyAI uses a modular agent-based architecture. The main application (`app.py`) 
 
 ---
 
-## 💻 Setup and Usage
+## Setup and Usage
 
 ### 1. Installation
 Clone the repository and install dependencies:
@@ -81,7 +81,7 @@ python -m streamlit run app.py
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 This project is a functional prototype and includes the following constraints:
 
@@ -92,7 +92,7 @@ This project is a functional prototype and includes the following constraints:
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 Planned enhancements for a production-ready version include:
 
@@ -103,7 +103,7 @@ Planned enhancements for a production-ready version include:
 
 ---
 
-## ⚖️ Ethical Considerations
+## Ethical Considerations
 
 Building AI for mental and emotional support requires strong ethical safeguards:
 
